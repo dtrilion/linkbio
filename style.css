@@ -1,63 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+/* Styling Ikon di dalam Tombol */
+.link-card i {
+    position: absolute;
+    left: 20px; /* Posisi ikon di sebelah kiri */
+    font-size: 1.2rem;
+    color: #d4af37; /* Warna emas untuk ikon */
 }
 
-body {
-    /* Background biru navy dengan gradasi radial untuk efek cahaya di tengah */
-    background: radial-gradient(circle at center, #1e4b8a 0%, #0a192f 100%);
-    color: white;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 40px 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-/* --- Profile Section --- */
-header .profile-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    /* Bingkai Emas Mewah */
-    border: 4px solid #d4af37; 
-    padding: 5px;
-    background: #0a192f;
-    margin-bottom: 20px;
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
-    animation: fadeInDown 1s ease;
-}
-
-header h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    color: #ffffff;
-}
-
-header p {
-    font-size: 0.85rem;
-    color: #e2e8f0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 35px;
-    opacity: 0.9;
-}
-
-/* --- Links Section --- */
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
+/* Memastikan teks tetap di tengah meskipun ada ikon di kiri */
 .link-card {
-    /* Gradasi Biru ke
+    padding-left: 50px; 
+    padding-right: 20px;
+}
