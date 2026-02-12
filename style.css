@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    /* Background biru navy dengan gradasi radial untuk efek cahaya di tengah */
+    background: radial-gradient(circle at center, #1e4b8a 0%, #0a192f 100%);
     color: white;
     display: flex;
     justify-content: center;
@@ -20,81 +21,43 @@ body {
     text-align: center;
 }
 
-/* --- Animasi Muncul (Fade In) --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-header {
-    animation: fadeInUp 0.8s ease forwards;
-}
-
+/* --- Profile Section --- */
 header .profile-img {
-    width: 96px;
-    height: 96px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    border: 3px solid #38bdf8;
-    margin-bottom: 16px;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    /* Bingkai Emas Mewah */
+    border: 4px solid #d4af37; 
+    padding: 5px;
+    background: #0a192f;
+    margin-bottom: 20px;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+    animation: fadeInDown 1s ease;
 }
 
-/* --- Style Tombol dengan Motion --- */
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+/* --- Links Section --- */
 .links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 32px;
+    gap: 18px;
 }
 
 .link-card {
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
-    text-decoration: none;
-    padding: 18px;
-    border-radius: 16px;
-    font-weight: 500;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    
-    /* Motion Transition */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
-    /* Animasi masuk berurutan */
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Delay animasi agar muncul satu per satu */
-.link-card:nth-child(1) { animation-delay: 0.2s; }
-.link-card:nth-child(2) { animation-delay: 0.3s; }
-.link-card:nth-child(3) { animation-delay: 0.4s; }
-.link-card:nth-child(4) { animation-delay: 0.5s; }
-.link-card:nth-child(5) { animation-delay: 0.6s; }
-
-/* Efek Hover yang Aktif */
-.link-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-    border-color: #38bdf8;
-    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
-}
-
-/* Efek saat diklik */
-.link-card:active {
-    transform: scale(0.95);
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 0.8rem;
-    color: #64748b;
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 0.8s;
-}
+    /* Gradasi Biru ke
