@@ -2,14 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    background-color: #0f172a; /* Warna background gelap modern */
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: white;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
     padding: 40px 20px;
 }
 
@@ -19,50 +20,81 @@ body {
     text-align: center;
 }
 
+/* --- Animasi Muncul (Fade In) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
 header .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     border: 3px solid #38bdf8;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
-header h1 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-header p {
-    font-size: 0.9rem;
-    color: #94a3b8;
-    margin-bottom: 30px;
-}
-
+/* --- Style Tombol dengan Motion --- */
 .links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
+    margin-top: 32px;
 }
 
 .link-card {
-    background: #1e293b;
+    background: rgba(255, 255, 255, 0.05);
     color: white;
     text-decoration: none;
-    padding: 15px;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 1px solid #334155;
+    padding: 18px;
+    border-radius: 16px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    
+    /* Motion Transition */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Animasi masuk berurutan */
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
+/* Delay animasi agar muncul satu per satu */
+.link-card:nth-child(1) { animation-delay: 0.2s; }
+.link-card:nth-child(2) { animation-delay: 0.3s; }
+.link-card:nth-child(3) { animation-delay: 0.4s; }
+.link-card:nth-child(4) { animation-delay: 0.5s; }
+.link-card:nth-child(5) { animation-delay: 0.6s; }
+
+/* Efek Hover yang Aktif */
 .link-card:hover {
-    background: #38bdf8;
-    color: #0f172a;
-    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+}
+
+/* Efek saat diklik */
+.link-card:active {
+    transform: scale(0.95);
 }
 
 footer {
-    margin-top: 40px;
+    margin-top: 50px;
     font-size: 0.8rem;
-    color: #475569;
+    color: #64748b;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.8s;
 }
